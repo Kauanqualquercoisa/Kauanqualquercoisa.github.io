@@ -1,0 +1,115 @@
+- ## Versionamento de Código
+
+
+ ## Comando Básicos e Essenciais do Git 😁😁
+
+clear – limpa a área de programação do git bash.
+Ctrl + L – sobe as linhas (outra forma de limpar o git bash). 
+
+git config – mostrar configurações global, local, além de outras.
+
+cat config -  mostrar as informações contidas no arquivo “config” que está presente no repositório oculto do git.
+git clone – clonar um repositório na pasta em questão a partir de uma URL
+
+mkdir “nome_do_diretório” – criar um repositório na pasta em questão
+
+cd “nome_do_diretório” – entra em qualquer repo dentro da pasta principal
+
+cd .. – Volta para o último lugar da pasta 
+
+cd .git – entra no repositório oculto do git
+
+git init –o diretório está pronto para ser usado como um repositório Git. Você pode começar a 
+adicionar arquivos, fazer commits, criar branch e realizar outras operações do Git nesse repositório e cria o repo oculto do git automaticamente.
+
+ls – lista as pastas e arquivos de um diretório.
+
+ls -a – lista todas as pastas e arquivos, inclusive os ocultos.
+
+touch “nome_do_arquivo.tipo” – cria um arquivo vazio dentro do repositório.
+
+git status – mostra os  arquivos untracked e que estão na área de preparação do repositório, em qual branch está, relata sobre os arquivos que se encontram dentro do repo.
+
+git add “nome_do_arquivo.tipo” – adiciona alterações feitas nos arquivos do seu projeto para serem incluídas no próximo commit.
+
+git commit -m "mensagem de commit" - criar um novo commit, ou seja, salvar as alterações feitas em um repositório Git. Além de adicionar uma mensagem de commit, que deve fornecer uma breve descrição das alterações realizadas. 
+
+git add . – Adiciona todos os arquivos para a área de preparação.
+
+git log – mostra o histórico de commits.
+
+echo “mensagem” > nome_do_arquivo.tipo – Cria um arquivo dentro de um diretório e insere uma mensagem dentro dele
+
+## Criação de Branchs 😴
+
+git status (1°)
+
+touch meu_arquivo.txt (2°)
+
+git add meu_arquivo.txt (3°)
+
+git status (4°)
+
+git commit -m "Atualizando meu_arquivo.txt" (5°)
+
+git branch “nome_da_branch” (6°)
+
+git branch (7°)
+
+Primeiro verifica se existem arquivos na área de preparação (1°), cria o arquivo dentro da pasta por código ou manualmente(2°), add o arquivo criado dentro do diretório para a área (3°) e depois verifica de novo de se foi adicionado (4°). Agora está pronto para fazer o commit e descrevê-lo (5°), depois disso pode-se criar uma branch que é um ponteiro e nomeá-la (6°) depois verifica as branchs que o diretório possui (7°).
+
+
+Resumo: Para criar Branchs dentro de diretório é preciso antes de tudo inicializar o git nele e é preciso fazer um commit dentro do diretório fazendo com que ele deixe de ser vazio.
+
+
+## Desfazendo alterações no repositório local 😎
+
+rm -rf .git - usado para remover o diretório .git de um repositório Git
+
+git restore “nome_do_arquivo.tipo” – restaura todas as alterações feitas em um arquivo para o último estado.
+
+git branch -m <nome-atual> <novo-nome> - renomear uma branch
+
+git commit --amend -m “nova descrição” – Mudar a descrição de um commit
+
+git reset --soft “id do commit” – ao dar “git log” você visualiza o id do commit e aplica a comando, que manda novamente para o stagging área todos os arquivos commitados antes do commit que tem o id usado.
+
+git reset  --mixed “id do commit” – diferente do “soft” o mixed manda os arquivos para a sttaging área como arquivo untracked files
+
+git resert --hard “id do commit” – O hard ignora  completamente os arquivos commitados antes do “commit do id” e apaga eles sem mandar para o sttaging área.
+
+
+
+## Conectando o repositório remoto com o repositório local 😐
+git remote -v – Ele é utilizado para exibir informações sobre os repositórios remotos associados ao seu projeto Git, mostra o nome dos repositórios remotos e as URLs associadas a eles.
+
+git remote add <nome_do_repo_remoto> URL – usado para adicionar um novo repositório remoto ao seu projeto Git, normalmente nomeia-se “origin” ao repo remoto.
+
+git push -u origin main – Envia a branch local main para a branch main no repositório remoto origin (nome padrão) e configura a branch local para rastrear a branch remota. Após usar “-u” pela primeira vez você pode simplesmente usar git push ou git pull para interagir com o repositório remoto associado.
+
+git push – Este é o comando básico para enviar commits do repositório local para um repositório remoto.
+
+git pull – Comando utilizado para trazer (pull) as atualizações feitas no repositório remoto para o seu repositório local.
+
+git diff – Mostra a diferença entre versões de commits, alterações que foram feitas um em relação a outro como adição de informações ou remoção, pode ser feito entre branchs os hash’s dos commits: 
+git diff hash1 hash2
+git diff branch1 branch2
+git diff branchLocal RepoRemoto/branchRemota – especial para comparar branch’s locais e remotas.
+
+O “git diff” é extremamente versátil e pode ser usado para comparar praticamente qualquer estado dentro do seu repositório Git, seja entre commits, branches, tags, etc. Isso é essencial para entender exatamente o que mudou e ajuda a revisar e depurar o código de maneira eficaz.
+git merge repoRemoto/branchRemoto – mescal os commits feitos numa branch remota com a branch local associada.
+
+
+
+## Outros comandos com branchs 🙄
+git checkout “nome_da_branch” – dentro de um diretório altera o ponteiro para outra branch existente.
+
+git checkout -b “nome_da_branch” – dentro de um diretório cria uma branch e altera para ela ao mesmo tempo.
+
+git branch -M "nome_da_branch” – renomeia uma branch existente.
+
+git branch -v – mostra as branchs existentes e para qual commit está apontando.
+
+git merge “nome_da_branch” – mescla uma branch com outra, estando em uma branch você consegue mesclar ela com uma outra de sua preferencia sem alterar ela. 
+
+git branch -d “nome_da_branch” – exclui uma branch existente.
